@@ -1,5 +1,6 @@
 package com.project.chatService.controller;
 
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import com.project.chatService.service.ChatService;
@@ -44,5 +45,15 @@ public class ChatController {
                                         @RequestParam String user2) {
 
         return chatService.getConversation(user1, user2);
+    }
+
+    @GetMapping("/messages")
+    public Page<Message> getMessages(
+            @RequestParam String user1,
+            @RequestParam String user2,
+            @RequestParam int page,
+            @RequestParam int size) {
+
+        return chatService.getConversation(user1, user2, page, size);
     }
 }
