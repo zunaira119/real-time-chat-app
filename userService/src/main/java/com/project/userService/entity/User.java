@@ -1,4 +1,4 @@
-package com.project.user.entity;
+package com.project.userService.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,4 +22,7 @@ public class UserEntity {
     private String password; // optional (can stay in auth service later)
 
     private String profilePic;
+    private String phone;
+    private String status;
+    private String profilePictureUrl;
 }

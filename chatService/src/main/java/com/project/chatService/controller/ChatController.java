@@ -35,7 +35,7 @@ public class ChatController {
                                Authentication authentication) {
 
         String sender = authentication.getName();
-
+        System.out.println("AUTH USER: " + authentication.getName());
         return chatService.saveMessage(sender, receiver, content);
     }
 
